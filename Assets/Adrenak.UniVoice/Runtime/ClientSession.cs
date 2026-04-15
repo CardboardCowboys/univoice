@@ -203,6 +203,7 @@ namespace Adrenak.UniVoice {
                     if (!InputEnabled)
                         return;
 
+										frame.originalSampleCount = frame.samples.Length;
                     if (InputFilters != null) {
                         foreach (var filter in InputFilters) {
                             frame = filter.Run(frame);
@@ -211,7 +212,7 @@ namespace Adrenak.UniVoice {
                         }
                     }
 
-                    if (frame.samples != null && frame.samples.Length > 0)
+                    //if (frame.samples != null && frame.samples.Length > 0)
                         Client.SendAudioFrame(frame);
                 };
             }

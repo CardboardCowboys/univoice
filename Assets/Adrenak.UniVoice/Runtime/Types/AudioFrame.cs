@@ -24,5 +24,10 @@
         /// A byte array representing the audio data
         /// </summary>
         public byte[] samples;
+
+				/// <summary>
+				/// The sample count before any filters.
+				/// </summary>
+				public int originalSampleCount;
     }
 }
