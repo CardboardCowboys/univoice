@@ -28,6 +28,6 @@
 				/// <summary>
 				/// The sample count before any filters.
 				/// </summary>
-				public int originalSampleCount;
+				public double audioDuration;
     }
 }

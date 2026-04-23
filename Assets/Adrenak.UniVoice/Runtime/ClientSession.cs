@@ -264,7 +264,7 @@ namespace Adrenak.UniVoice
 					if (!InputEnabled)
 						return;
 
-					frame.originalSampleCount = frame.samples.Length;
+					var duration = frame.samples.Length / (frame.frequency / (double)frame.channelCount);
 
 					if (LocalAudioSettings.Muted)
 					{
@@ -290,6 +290,8 @@ namespace Adrenak.UniVoice
 								break;
 						}
 					}
+
+					frame.audioDuration = duration;
 
 					Client.SendAudioFrame(frame);
 				};
